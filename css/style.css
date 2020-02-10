@@ -1,0 +1,263 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 30px 50px;
+  width: 100%;
+  max-width: 1200px;
+  border: 2px solid #581845;
+  border-radius: 5px;
+}
+
+.tabs,
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.tabs__btn:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+
+.btn {
+  box-sizing: border-box;
+  padding: 8px 13px;
+  color: #581845;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: #ffc300;
+  border: 2px solid #ffc300;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn--close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.btn--close::before,
+.btn--close::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  height: 21px;
+  width: 3px;
+  background-color: #ffc300;
+  transition: background-color 0.3s;
+}
+
+.btn--close::before {
+  transform: rotate(45deg);
+}
+
+.btn--close:after {
+  transform: rotate(-45deg);
+}
+
+
+.btn:hover {
+  background-color: transparent;
+}
+
+.btn--close:hover::before,
+.btn--close:hover::after {
+  background-color: #c70039;
+}
+
+.users__btn-wrapper {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.users__table {
+  margin: 35px 50px 0 0;
+  border: 2px solid #581845;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+.users__table th,
+.users__table td {
+  padding: 15px 30px;
+  text-align: center;
+  border: 2px solid #581845;
+}
+
+td .btn:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.edit-form,
+.user-info {
+  position: relative;
+  display: none;
+  margin-top: 35px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  /*margin-right: 50px;*/
+  padding: 15px 25px;
+  max-width: 230px;
+  border: 2px solid #581845;
+  border-radius: 5px;
+}
+
+.edit-form.visible {
+  display: flex;
+}
+
+.user-info {
+  display: none;
+  padding: 30px;
+  min-width: 170px;
+}
+
+.user-info.visible {
+  display: flex;
+}
+
+.user-info__content {
+  width: 100%;
+}
+
+.edit-form h2,
+.user-info h2 {
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.edit-form p {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 15px;
+  padding: 0;
+}
+
+.edit-form__label {
+  width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: #581845;
+}
+
+.edit-form__input {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px;
+  width: 210px;
+  border: 1px solid #ffc300;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.edit-form__input::placeholder {
+  color: #ff5733;
+}
+
+.edit-form__input:hover,
+.edit-form__input:focus {
+  border-color: #900c3f;
+}
+
+.edit-form__input:focus::placeholder {
+  color: transparent;
+}
+
+.confirm-popup,
+.error-popup {
+  position: absolute;
+  top: 120px;
+  right: 70px;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 25px;
+  max-width: 230px;
+  background-color: white;
+  border: 2px solid #581845;
+  border-radius: 5px;
+
+}
+
+.error-popup {
+  margin-top: 30px;
+}
+
+.confirm-popup p,
+.error-popup p {
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #581845;
+  text-align: center;
+}
+
+.confirm-popup__btn--confirm {
+  background-color: #daf7a6;
+  border: 2px solid #daf7a6;
+}
+
+.confirm-popup__btn--cancel {
+  background-color: #ff5733;
+  border: 2px solid #ff5733;
+}
+
+.confirm-popup.visible,
+.error-popup.visible {
+  display: flex;
+}
+
+.edit-form__btn--add,
+.edit-form__btn--save,
+.edit-form__btn-person--add,
+.edit-form__btn-company--add,
+.edit-form__btn-car--add {
+  display: none;
+}
+
+.edit-form__btn--add.visible,
+.edit-form__btn--save.visible,
+.edit-form__btn-car--add.visible,
+.edit-form__btn-company--add.visible,
+.edit-form__btn-person--add.visible  {
+  display: block;
+}
+
+.error {
+  border-color: red;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}

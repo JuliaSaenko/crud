@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    <div class="tabs">
+      <button class="tabs__btn tabs__btn--cars btn" type="button">Cars</button>
+      <button class="tabs__btn tabs__btn--people btn" type="button">People</button>
+      <button class="tabs__btn tabs__btn--companies btn" type="button">Companies</button>
+    </div>
+    <div class="users">
+      <div class="users__btn-wrapper">
+        <button class="users__new-btn btn" data-btn-add="add-new-car" type="button">Add new car</button>
+      </div>
+      <div class="users__wrpper">
+        <table class="users__table"></table>
+      </div>
+    <div class="user-info">
+      <button class="user-info__close-btn btn btn--close" type="button"><span class="visually-hidden">Close</span></button>
+      <h2 class="user-info__title"></h2>
+      <div class="user-info__content"></div>
+    </div>
+    <form class="edit-form edit-form--person" name="person">
+      <h2 class="edit-form__title">Change information</h2>
+      <button class="edit-form__btn--close btn btn--close" type="button"><span class="visually-hidden">Close</span></button>
+      <p>
+        <label class="edit-form__label" for="personName">Person name:</label>
+        <input class="edit-form__input" name="personName" type="text" id="personName" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="personAge">Person age:</label>
+        <input class="edit-form__input" name="personAge" type="number" id="personAge" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="personPhone">Person phone:</label>
+        <input class="edit-form__input" name="personPhone" type="text" id="personPhone" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="personBalance">Person balance:</label>
+        <input class="edit-form__input" name="personBalance" type="number" id="personBalance" required>
+      </p>
+      <div class="edit-form__cars-select">
+        <p>
+          <label class="edit-form__label" for="personCar">Person car:</label>
+          <input class="edit-form__input" name="personCar" type="text" id="personCar" required readonly>
+        </p>
+        <div class="edit-form__cars-list"></div>
+      </div>
+      <button class="edit-form__btn--save btn visible" type="button">Save changes</button>
+      <button class="edit-form__btn-person--add btn" type="button">Add new person</button>
+    </form>
+    <form class="edit-form edit-form--company" name="company">
+      <h2 class="edit-form__title">Change information</h2>
+      <button class="edit-form__btn--close btn btn--close" type="button"><span class="visually-hidden">Close</span></button>
+      <p>
+        <label class="edit-form__label" for="companyName">Company name:</label>
+        <input class="edit-form__input" name="companyName" type="text" id="companyName" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="companyLocation">Company location:</label>
+        <input class="edit-form__input" name="companyLocation" type="text" id="companyLocation" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="companyEmail">Company email:</label>
+        <input class="edit-form__input" name="companyEmail" type="text" id="companyEmail" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="companyBalance">Company balance:</label>
+        <input class="edit-form__input" name="companyBalance" type="number" id="companyBalance" required>
+      </p>
+      <div class="edit-form__cars-select">
+        <p>
+          <label class="edit-form__label" for="companyCar">Company car:</label>
+          <input class="edit-form__input" name="companyCar" type="text" id="companyCar" required readonly>
+        </p>
+        <div class="edit-form__cars-list"></div>
+      </div>
+      <button class="edit-form__btn--save btn visible" type="button">Save changes</button>
+      <button class="edit-form__btn-company--add btn" type="button">Add new company</button>
+    </form>
+    <form class="edit-form edit-form--car" name="car">
+      <h2 class="edit-form__title">Change car information</h2>
+      <button class="edit-form__btn--close btn btn--close" type="button"><span class="visually-hidden">Close</span></button>
+      <p>
+        <label class="edit-form__label" for="carModel">Car model:</label>
+        <input class="edit-form__input" name="carModel" type="text" value="" id="carModel" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="carYear">Car year:</label>
+        <input class="edit-form__input" name="carYear" type="number" id="carYear" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="carColor">Car color:</label>
+        <input class="edit-form__input" name="carColor" type="text" id="carColor" required>
+      </p>
+      <p>
+        <label class="edit-form__label" for="carPrice">Car price:</label>
+        <input class="edit-form__input" name="carPrice" type="text" id="carPrice" required>
+      </p>
+      <button class="edit-form__btn--save btn visible" type="button">Save changes</button>
+      <button class="edit-form__btn-car--add btn" type="button">Add new car</button>
+    </form>
+    <div class="confirm-popup">
+      <p>Are you sure you want to remove this element?</p>
+      <button class="confirm-popup__btn confirm-popup__btn--confirm btn" type="button">Yes</button>
+      <button class="confirm-popup__btn confirm-popup__btn--cancel btn" type="button">No</button>
+    </div>
+    <div class="error-popup">
+      <p class="error-popup__text"></p>
+      <button class="error-popup__close btn btn--close"><span class="visually-hidden">Close</span></button>
+    </div>
+  </main>
+  <script src="js/utils.js"></script>
+  <script src="js/Car.js"></script>
+  <script src="js/Person.js"></script>
+  <script src="js/Company.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
